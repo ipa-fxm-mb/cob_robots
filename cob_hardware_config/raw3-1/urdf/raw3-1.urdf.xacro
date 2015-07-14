@@ -60,7 +60,6 @@
     <axis xyz="1 0 0"/>
   </xacro:cob_lookat-->
 
-<!--
   <xacro:ur10 name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:ur10>
@@ -74,7 +73,6 @@
   <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
     <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
   </xacro:raw_boxgripper>
--->
 
 
   <!-- IMU brick mount on raw3-1 -->
