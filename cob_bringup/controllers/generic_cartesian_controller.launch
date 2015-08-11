@@ -20,10 +20,8 @@
 			<param name="target_frame" type="str" value="cartesian_target"/>
 		</node>
 -->
-
-<!--
 		<node pkg="cob_obstacle_distance" type="cob_obstacle_distance" name="obstacle_distance" cwd="node" respawn="false" output="screen" />
--->
+
 
 	</group>
 
