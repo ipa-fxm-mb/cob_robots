@@ -20,7 +20,6 @@ twist_controller:
   # constraints
   solver: 1    #WLN
   priority: 500    #Prio for main task
-  mu: -2.0
   k_H: 1.0    #Self-motion factor for GPM
 
   # JLA
