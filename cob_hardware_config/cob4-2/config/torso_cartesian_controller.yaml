@@ -27,6 +27,8 @@ twist_controller:
   priority_jla: 50
   k_H_jla: -1.0
   activation_threshold_jla: 10.0    #in [%]
+  activation_buffer_jla: 300.0 # [%]
+  critical_threshold_jla: 5.0 # [%]
   damping_jla: 0.000001
 
   # CA
@@ -34,6 +36,8 @@ twist_controller:
   priority_ca: 100
   k_H_ca: -2.0
   activation_threshold_ca: 0.1    #in [m]
+  activation_buffer_ca: 50.0 # [%]
+  critical_threshold_ca: 0.025 # [m]
   damping_ca: 0.000001
 
   # limit enforcing
