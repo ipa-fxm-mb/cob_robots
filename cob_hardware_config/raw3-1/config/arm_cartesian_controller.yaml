@@ -20,21 +20,24 @@ twist_controller:
   # constraints
   solver: 1    #WLN
   priority: 500    #Prio for main task
-  mu: -2.0
   k_H: 1.0    #Self-motion factor for GPM
 
   # JLA
   constraint_jla: 1    #OFF 0, ENABLED 1, MID 1, INEQ 2
   priority_jla: 50
-  k_H_jla: -10.0
+  k_H_jla: -1.0
   activation_threshold_jla: 10.0    #in [%]
+  activation_buffer_jla: 300.0 # [%]
+  critical_threshold_jla: 5.0 # [%]
   damping_jla: 0.000001
 
   # CA
   constraint_ca: 0    #OFF 0, ENABLED 1
   priority_ca: 100
-  k_H_ca: -20.0
+  k_H_ca: -2.0
   activation_threshold_ca: 0.1    #in [m]
+  activation_buffer_ca: 50.0 # [%]
+  critical_threshold_ca: 0.025 # [m]
   damping_ca: 0.000001
 
   # limit enforcing
