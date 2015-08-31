@@ -1,6 +1,6 @@
 ## Cartesian controller parameters
-chain_base_link: torso_base_link
-chain_tip_link: torso_center_link
+chain_base_link: arm_base_link
+chain_tip_link: arm_ee_link
 root_frame: odom_combined
 
 # twist controller parameters
@@ -25,7 +25,7 @@ twist_controller:
   # JLA
   constraint_jla: 1    #OFF 0, ENABLED 1, MID 1, INEQ 2
   priority_jla: 50
-  k_H_jla: -1.0
+  k_H_jla: -0.5
   activation_threshold_jla: 10.0    #in [%]
   activation_buffer_jla: 300.0 # [%]
   critical_threshold_jla: 5.0 # [%]
@@ -34,7 +34,7 @@ twist_controller:
   # CA
   constraint_ca: 0    #OFF 0, ENABLED 1
   priority_ca: 100
-  k_H_ca: -2.0
+  k_H_ca: -1.0
   activation_threshold_ca: 0.1    #in [m]
   activation_buffer_ca: 50.0 # [%]
   critical_threshold_ca: 0.025 # [m]
@@ -54,13 +54,13 @@ twist_controller:
   max_vel_rot_base: 0.5
 
   # collision avoidance frames for obstacle distance
-  collision_check_frames: [torso_3_link]
+  collision_check_frames: [arm_forearm_link, arm_upper_arm_link, arm_wrist_2_link]
 
 # frame_tracker + interactive_marker
 frame_tracker:
   update_rate: 50.0
-  tracking_frame: torso_center_target
-  movable_trans: false
+  tracking_frame: arm_ee_target
+  movable_trans: true
   movable_rot: true
   pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_trans_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
@@ -69,8 +69,8 @@ frame_tracker:
   pid_rot_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   # abortion criteria - cfg
-  cart_min_dist_threshold_lin: 0.2
-  cart_min_dist_threshold_rot: 0.2
+  cart_min_dist_threshold_lin: 5.0
+  cart_min_dist_threshold_rot: 5.0
   twist_dead_threshold_lin: 0.05
   twist_dead_threshold_rot: 0.05
   twist_deviation_threshold_lin: 0.5
